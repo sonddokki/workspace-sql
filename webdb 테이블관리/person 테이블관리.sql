@@ -30,4 +30,11 @@ VALUES (seq_person_id.nextval, '손성진' , '010-7130-9913' , '하이미디어'
 
 
 DELETE FROM person 
-WHERE person_id = 2 ;           
+WHERE person_id = 6 ;           
+
+SELECT  person_id
+        ,name
+        ,hp
+        ,company    
+FROM person
+where name like '%성%' ;
