@@ -9,6 +9,7 @@ DROP TABLE person;
 drop SEQUENCE seq_person_id;
 
 
+
 -- person 테이블 생성
 create table person(person_id  number(5)       -- pk
                     ,name varchar2(50)  not null
