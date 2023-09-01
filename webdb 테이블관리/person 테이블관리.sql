@@ -75,6 +75,10 @@ UPDATE person
 set company = '999-999-9999'
 where name = '손성진';   
 
+UPDATE person  
+set name = '송아지'  
+where person_id = 27;
+
 
 SELECT  person_id
         ,name 
