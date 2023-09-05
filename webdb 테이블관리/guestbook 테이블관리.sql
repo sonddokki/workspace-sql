@@ -26,15 +26,17 @@ nocache;                       -- 번호미리생성 안하기
      
 --===============================================================================================        
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요','23/09/05' ); 
+VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', '799133', '안녕하세요','23/09/05' ); 
+VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', '899133', '안녕하세요','23/09/05' ); 
+VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', '999133', '안녕하세요','23/09/05' ); 
+VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', '199133', '안녕하세요','23/09/05' ); 
+VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
+INSERT INTO guestbook
+VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
 --===============================================================================================        
 
 
