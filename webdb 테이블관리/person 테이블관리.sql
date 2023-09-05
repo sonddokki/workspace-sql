@@ -28,13 +28,13 @@ nocache;                       -- 번호미리생성 안하기
 INSERT INTO person
 VALUES (seq_person_id.nextval, '손성진' , '010-7130-9913' , '412-2312-2312'  );
 INSERT INTO person
-VALUES (seq_person_id.nextval, '성진손' , '111-2222-3334' , '412-2312-2312'  );
+VALUES (seq_person_id.nextval, '정우성' , '111-2222-3334' , '412-2312-2312'  );
 INSERT INTO person
 VALUES (seq_person_id.nextval, '이정재' , '222-3333-4444' , '412-2312-2312'  );
 INSERT INTO person
-VALUES (seq_person_id.nextval, '손바닥' , '010-7130-9913' , '412-2312-2312'  );
+VALUES (seq_person_id.nextval, '박소담' , '010-7130-9913' , '412-2312-2312'  );
 INSERT INTO person
-VALUES (seq_person_id.nextval, '손만두' , '010-7130-9913' , '412-2312-2312'  );
+VALUES (seq_person_id.nextval, '매직박' , '010-7130-9913' , '412-2312-2312'  );
 INSERT INTO person
 VALUES (seq_person_id.nextval, '침착맨' , '555-5555-3333' , '412-2312-2312'  );
 INSERT INTO person
@@ -44,11 +44,13 @@ VALUES (seq_person_id.nextval, '우왁굳' , '421-3232-2322' , '412-2312-2312'  
 INSERT INTO person
 VALUES (seq_person_id.nextval, '소니쇼' , '010-7130-9913' , '412-2312-2312'  );
 INSERT INTO person
-VALUES (seq_person_id.nextval, '정우성' , '010-7130-9913' , '412-2312-2312'  );
+VALUES (seq_person_id.nextval, '오영택' , '010-7130-9913' , '412-2312-2312'  );
+INSERT INTO person
+VALUES (seq_person_id.nextval, '고세구' , '010-7130-9913' , '412-2312-2312'  );
 
 
 DELETE FROM person 
-WHERE person_id = 6 ;           
+WHERE name = '강호동' ;           
 
 SELECT  person_id
         ,name
