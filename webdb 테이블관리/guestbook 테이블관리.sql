@@ -54,4 +54,6 @@ FROM guestbook;
 DELETE FROM guestbook 
 WHERE password = '199133';
 
+DELETE FROM guestbook 
+WHERE no = 5;
 
