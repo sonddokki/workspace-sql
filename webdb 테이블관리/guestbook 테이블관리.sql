@@ -26,17 +26,17 @@ nocache;                       -- 번호미리생성 안하기
      
 --===============================================================================================        
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
+VALUES (seq_no.nextval, '손성진', '99133', '안녕하세요',SYSDATE); 
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
+VALUES (seq_no.nextval, '이정재', '913', '반갑습니다',SYSDATE); 
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
+VALUES (seq_no.nextval, '오영택', '9133', '오랜만이에요',SYSDATE); 
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
+VALUES (seq_no.nextval, '고세구', '133', '즐거운하루되세요',SYSDATE); 
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
+VALUES (seq_no.nextval, '침착맨', '99133', '오히려 좋아',SYSDATE); 
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '손성진', 'as99133', '안녕하세요',SYSDATE); 
+VALUES (seq_no.nextval, '매직박', '99133', '안녕못해',SYSDATE); 
 --===============================================================================================        
 
 
@@ -52,7 +52,7 @@ FROM guestbook;
 
 -- 삭제
 DELETE FROM guestbook 
-WHERE password = '199133';
+WHERE password = ;
 
 DELETE FROM guestbook 
 WHERE no = 5;
