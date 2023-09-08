@@ -31,4 +31,25 @@ VALUES (seq_users_no.nextval, '아이디', '99133', '손성진', 'male');
 DELETE FROM users 
 WHERE no = 2;
 
+SELECT  no
+        ,name    
+FROM users
+where id = '아이디'
+and password = '99133';
 
+--===테이블 확인===============
+SELECT * FROM users; 
+
+--===수정 쿼리문=======================================================================================        
+UPDATE users
+set password = '013013'
+, name = '바꾼이름'
+, gender = 'female'
+where id = '아이디';
+
+
+UPDATE users
+set password = '1'
+    , name = '이왕건'
+    , gender = 'femle'
+where id = '침착맨' ;
