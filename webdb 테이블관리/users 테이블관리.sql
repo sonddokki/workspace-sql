@@ -37,6 +37,13 @@ FROM users
 where id = '아이디'
 and password = '99133';
 
+SELECT  no
+        ,name 
+FROM users 
+where id = '침착맨' 
+and password = '1' ;
+
+
 --===테이블 확인===============
 SELECT * FROM users; 
 
@@ -53,3 +60,15 @@ set password = '1'
     , name = '이왕건'
     , gender = 'femle'
 where id = '침착맨' ;
+
+
+
+SELECT  no
+        ,id
+         ,password
+         ,name
+         ,gender
+ FROM users
+ where id = '침착맨' 
+ and name = '이왕건' ;
+
