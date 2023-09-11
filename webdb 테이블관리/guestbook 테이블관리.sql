@@ -36,7 +36,7 @@ VALUES (seq_no.nextval, '고세구', '133', '즐거운하루되세요',SYSDATE);
 INSERT INTO guestbook
 VALUES (seq_no.nextval, '침착맨', '99133', '오히려 좋아',SYSDATE); 
 INSERT INTO guestbook
-VALUES (seq_no.nextval, '매직박', '99133', '안녕못해',SYSDATE); 
+VALUES (seq_no.nextval, '아이유', '99133', '안녕 오래 기다렸지',SYSDATE); 
 --===============================================================================================        
 
 

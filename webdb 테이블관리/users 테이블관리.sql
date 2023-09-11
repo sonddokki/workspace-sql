@@ -27,6 +27,8 @@ nocache;                       -- 번호미리생성 안하기
 --===============================================================================================        
 INSERT INTO users
 VALUES (seq_users_no.nextval, '아이디', '99133', '손성진', 'male'); 
+INSERT INTO users
+VALUES (seq_users_no.nextval, '아이유', '1234', '이지은', 'female'); 
 
 DELETE FROM users 
 WHERE no = 2;
