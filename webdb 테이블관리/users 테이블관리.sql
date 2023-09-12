@@ -31,7 +31,7 @@ INSERT INTO users
 VALUES (seq_users_no.nextval, '아이유', '1234', '이지은', 'female'); 
 
 DELETE FROM users 
-WHERE no = 2;
+WHERE no = 1;
 
 SELECT  no
         ,name    

@@ -29,7 +29,7 @@ nocache;                       -- 번호미리생성 안하기
 INSERT INTO board
 VALUES (seq_board_no.nextval, '글제목', '글내용', 100, SYSDATE, 1); 
 INSERT INTO board
-VALUES (seq_board_no.nextval, '글제목', '글내용', 100, SYSDATE, 3); 
+VALUES (seq_board_no.nextval, '스윗홈', '글내용', 100, SYSDATE, 15); 
 INSERT INTO board
 VALUES (seq_board_no.nextval, '글제목', '글내용', 100, SYSDATE, 27); 
 
@@ -52,7 +52,8 @@ SELECT  bo.no,
         us.name,
         us.no
 FROM board bo, users us
-where bo.user_no = us.no;
+where bo.user_no = us.no
+ORDER BY bo.no desc;
 
 -- 읽기글 하나
 SELECT  bo.no,
@@ -76,3 +77,28 @@ set title = '대충 제목'
     ,content = '대충 내용'
 where user_no = 1
 and no = 1;
+
+UPDATE board
+set hit = hit+1
+where user_no = 1;
+
+SELECT
+    *
+FROM board;
+
+
+   
+SELECT  bo.no,
+        bo.title,
+        bo.content,
+        bo.hit,
+        bo.reg_date,
+        us.name,
+        us.no
+FROM board bo, users us
+where bo.user_no = us.no
+and title like '%글%'
+ORDER BY bo.no desc;
+
+
+
