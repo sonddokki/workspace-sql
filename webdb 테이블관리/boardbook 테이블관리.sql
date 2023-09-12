@@ -43,15 +43,36 @@ SELECT  no
         ,user_no
 FROM board;
 
+-- 리스트 검색
 SELECT  bo.no,
         bo.title,
         bo.content,
         bo.hit,
         bo.reg_date,
-        bo.user_no,
-        us.name
+        us.name,
+        us.no
 FROM board bo, users us
 where bo.user_no = us.no;
 
+-- 읽기글 하나
+SELECT  bo.no,
+        bo.title,
+        bo.content,
+        bo.hit,
+        bo.reg_date,
+        us.name
+FROM board bo, users us
+where bo.user_no = us.no
+and bo.no = 6;
 
+-- 삭제
+DELETE from board
+where user_no = 1
+and no = 1;
 
+-- 수정
+ UPDATE board
+set title = '대충 제목'
+    ,content = '대충 내용'
+where user_no = 1
+and no = 1;
