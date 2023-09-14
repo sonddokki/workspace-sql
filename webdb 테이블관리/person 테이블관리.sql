@@ -93,3 +93,12 @@ where person_id = 1;
 UPDATE person
 set company = '999-999-9999'
 where name = '손성진';   
+
+
+
+SELECT  person_id
+        ,name
+        ,hp
+        ,company    
+FROM person
+ORDER BY person_id desc;
