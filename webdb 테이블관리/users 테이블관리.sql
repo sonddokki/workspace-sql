@@ -71,6 +71,10 @@ SELECT  no
          ,name
          ,gender
  FROM users
- where id = '침착맨' 
- and name = '이왕건' ;
+ where id = '침착맨' ;
 
+SELECT  no				
+        ,name
+FROM users
+where id = '카더가든'
+and password = '9999';
