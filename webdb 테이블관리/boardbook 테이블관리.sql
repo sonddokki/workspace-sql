@@ -1,5 +1,7 @@
 -- board 테이블관리
+--  보드북이 아닌 보드로 관리
 
+SELECT * FROM board; 
 
 -- 테이블,시퀸스 전체 삭제
 DROP TABLE board;
@@ -100,5 +102,14 @@ where bo.user_no = us.no
 and title like '%글%'
 ORDER BY bo.no desc;
 
-
+select  bo.no as no
+				    ,bo.title as title
+					,bo.content as content
+					,bo.hit as hit
+					,bo.reg_date as regDate
+					,us.name as name
+					,us.no as userNo
+			FROM board bo, users us
+			where bo.user_no = us.no
+			ORDER BY bo.no desc;
 

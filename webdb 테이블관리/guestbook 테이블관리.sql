@@ -50,6 +50,14 @@ SELECT  no
         ,reg_date    
 FROM guestbook;
 
+select  no
+				    ,name
+					,password
+					,content
+					,reg_date as regDate
+			from guestbook
+			ORDER BY no desc;
+
 -- 삭제
 DELETE FROM guestbook 
 WHERE password = ;

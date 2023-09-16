@@ -58,10 +58,11 @@ where id = '아이디';
 
 
 UPDATE users
-set password = '1'
+set password = '12345'
     , name = '이왕건'
-    , gender = 'femle'
+    , gender = 'male'
 where id = '침착맨' ;
+
 
 
 
