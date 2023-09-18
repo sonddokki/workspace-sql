@@ -113,3 +113,45 @@ select  bo.no as no
 			where bo.user_no = us.no
 			ORDER BY bo.no desc;
 
+
+--==== 계층형 게시판 만들기 =====================================================================        
+
+SELECT * FROM rboard; 
+
+-- 테이블,시퀸스 전체 삭제
+DROP TABLE rboard;
+drop SEQUENCE seq_rboard_no;
+
+-- board 테이블 생성
+create table rboard (no number,      
+                    title varchar2(500), 
+                    content varchar2(4000),
+                    hit number not null ,
+                    reg_date date,
+                    user_no number not null ,
+                    group_no number,   
+                    order_no number,   
+                    depth number,
+                    PRIMARY KEY(no)         -- 프라이머리키 지정
+                    -- 테이블끼리 관계 만들기
+                    ,CONSTRAINT rNo_fk FOREIGN KEY (user_no) -- CONSTRAINT 관계선이름 FOREIGN KEY (참조당할칼럼명)
+                    REFERENCES users(no)  -- REFERENCES 참조할테이블(참조할칼럼명)
+                    );
+
+--===============================================================================================                  
+-- 시퀸스 생성 (데이터 등록시 번호 생성할 칼럼)
+CREATE SEQUENCE seq_rboard_no 
+INCREMENT BY 1                 -- 번호1씩 상승
+START WITH 1                   -- 초기번호 1부터 시작 
+nocache;                       -- 번호미리생성 안하기     
+
+--===============================================================================================  
+-- 게시글 등록시
+INSERT INTO rboard
+VALUES (seq_rboard_no.nextval, '글제목', '글내용', 0 , SYSDATE, 1,1,1,0); 
+-- 순서 (no지정, 제목, 내용, 조회수, 날짜, 그룹번호, 그룹내순서, 깊이)
+
+-- 댓글 등록시
+INSERT INTO rboard
+VALUES (seq_rboard_no.nextval, '글제목', '글내용', 0 , SYSDATE, 1,1,1,0); 
+
