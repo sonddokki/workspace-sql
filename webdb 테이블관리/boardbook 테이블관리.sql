@@ -148,10 +148,111 @@ nocache;                       -- 번호미리생성 안하기
 --===============================================================================================  
 -- 게시글 등록시
 INSERT INTO rboard
+VALUES (seq_rboard_no.nextval 
+        ,'글제목'
+        ,'글내용'
+        ,0 
+        ,SYSDATE
+        ,1
+        ,seq_rboard_no.nextval + 1
+        ,1 + 1
+        ,0); 
+-- 순서 (no지정, 제목, 내용, 조회수, 날짜, 그룹번호, 그룹내순서, 깊이)
+--===============================================================================================  
+-- 게시글 등록시
+INSERT INTO rboard
 VALUES (seq_rboard_no.nextval, '글제목', '글내용', 0 , SYSDATE, 1,1,1,0); 
 -- 순서 (no지정, 제목, 내용, 조회수, 날짜, 그룹번호, 그룹내순서, 깊이)
-
 -- 댓글 등록시
 INSERT INTO rboard
 VALUES (seq_rboard_no.nextval, '글제목', '글내용', 0 , SYSDATE, 1,1,1,0); 
 
+UPDATE rboard
+set order_no = (order_no+1)
+where group_no = 69
+and order_no > 1 ;
+
+UPDATE rboard
+set title = '>'+ title
+where depth != 0;
+
+select  bo.no as no
+        ,LENGTH(bo.title) as LENGTH
+        ,bo.title
+        ,LPAD(bo.title,bo.depth+LENGTH(bo.title),'↳') as title1
+        ,LPAD(' ',bo.depth+1,'↳')|| bo.title as title2
+        ,LPAD(bo.title,bo.depth,'↳')|| bo.title as title3
+        ,LPAD(bo.title,20,'↳') as title4
+        ,LPAD(bo.title,(LENGTH(bo.title)),'↳') as title5
+        ,LPAD(bo.title,(bo.depth+LENGTH(bo.title)),'↳') as title6
+        ,bo.content as content
+        ,bo.hit as hit
+        ,bo.reg_date as regDate
+        ,us.name as name
+        ,us.no as userNo
+        ,bo.group_no
+        ,bo.order_no
+        ,bo.depth
+FROM rboard bo, users us
+where bo.user_no = us.no
+ORDER BY bo.group_no desc
+        ,bo.order_no asc;
+                    
+select  bo.no as no
+        ,LPAD('>',bo.depth,'>')|| bo.title as title
+        ,bo.content as content
+        ,bo.hit as hit
+        ,bo.reg_date as regDate
+        ,us.name as name
+        ,us.no as userNo
+FROM rboard bo, users us
+where bo.user_no = us.no
+ORDER BY bo.group_no desc
+        ,bo.order_no asc;
+
+UPDATE rboard
+			set order_no = #{orderNo}+1
+			where group_no = 93} 
+			and order_no > 1;
+            
+          
+            SELECT r.*
+		  FROM (SELECT r.*, ROWNUM rown
+		          FROM (SELECT r.*		                       
+		                  FROM rboard r, users u
+		                 WHERE r.user_no = u.no
+		                 ORDER BY r.group_no desc, r.order_no) r) r
+		WHERE rown BETWEEN 1 AND 5;
+            
+     
+SELECT
+    *
+FROM ;      
+ 
+-- 페이징처리용 쿼리문
+SELECT rn2.*
+FROM (SELECT rn.*, ROWNUM rown
+      FROM  (select  bo.no as no
+            ,LPAD(' ',bo.depth+1,'↳')|| bo.title as title
+            ,bo.content as content
+            ,bo.hit as hit
+            ,bo.reg_date as regDate
+            ,us.name as name
+            ,us.no as userNo
+     FROM rboard bo, users us
+     where bo.user_no = us.no
+     and bo.title LIKE '%%'
+     ORDER BY bo.group_no desc
+             ,bo.order_no asc) rn) rn2
+WHERE rown BETWEEN 1 AND 6;
+   
+            
+select  bo.no as no
+        ,bo.title
+        ,bo.group_no
+        ,bo.order_no
+        ,bo.depth
+FROM rboard bo, users us
+where bo.user_no = us.no
+ORDER BY bo.group_no desc
+        ,bo.order_no asc;
