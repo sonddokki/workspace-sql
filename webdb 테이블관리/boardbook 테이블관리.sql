@@ -1,5 +1,6 @@
 -- board 테이블관리
 --  보드북이 아닌 보드로 관리
+SELECT * FROM tab; 
 
 SELECT * FROM board; 
 
@@ -29,7 +30,77 @@ nocache;                       -- 번호미리생성 안하기
 
 --===============================================================================================        
 INSERT INTO board
-VALUES (seq_board_no.nextval, '글제목', '글내용', 100, SYSDATE, 1); 
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1);       
+INSERT INTO board
+VALUES (seq_board_no.nextval, '페이징테스트용', '페이징테스트용', 0, SYSDATE, 1); 
 INSERT INTO board
 VALUES (seq_board_no.nextval, '스윗홈', '글내용', 100, SYSDATE, 15); 
 INSERT INTO board
@@ -245,8 +316,69 @@ FROM (SELECT rn.*, ROWNUM rown
      ORDER BY bo.group_no desc
              ,bo.order_no asc) rn) rn2
 WHERE rown BETWEEN 1 AND 6;
-   
-            
+
+--////////////////////////////////////////////////////////////////////   
+  
+-- 페이징 리스트 쿼리문 
+
+SELECT   ort.rn
+        ,ort.no
+        ,ort.title
+        ,ort.content
+        ,ort.hit
+        ,ort.regDate
+        ,ort.name 
+        ,ort.userNo      
+FROM (SELECT   rownum rn
+              ,ot.no
+              ,ot.title
+              ,ot.content
+              ,ot.hit
+              ,ot.regDate
+              ,ot.name 
+              ,ot.userNo     
+        FROM  (select b.no
+                     ,b.title
+                     ,b.content
+                     ,b.hit
+                     ,to_char(b.reg_date, 'yyyy-mm-dd hh:mi') regDate
+                     ,u.name 
+                     ,b.user_no userNo    
+              from board b, users u
+              where b.user_no = u.no
+              ORDER BY u.no asc) ot ) ort
+where ort.rn >= 151
+and ort.rn <= 156;
+
+
+SELECT rownum
+      ,ot.no
+      ,ot.title
+      ,ot.content
+      ,ot.hit
+      ,ot.regDate
+      ,ot.name 
+      ,ot.userNo     
+FROM  (select b.no
+             ,b.title
+             ,b.content
+             ,b.hit
+             ,to_char(b.reg_date, 'yyyy-mm-dd hh:mi') regDate
+             ,u.name 
+             ,b.user_no userNo    
+      from board b, users u
+      where b.user_no = u.no
+      ORDER BY u.no asc) ot
+where rownum >= 1
+and rownum <= 10;
+
+
+
+
+
+
+
+  
 select  bo.no as no
         ,bo.title
         ,bo.group_no
@@ -256,3 +388,6 @@ FROM rboard bo, users us
 where bo.user_no = us.no
 ORDER BY bo.group_no desc
         ,bo.order_no asc;
+        
+        
+        
