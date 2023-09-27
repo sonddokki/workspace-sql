@@ -373,11 +373,15 @@ where rownum >= 1
 and rownum <= 10;
 
 
+SELECT count(*) count
+FROM board;
 
+SELECT count(*) count
+FROM board;
 
-
-
-
+SELECT count(*) count
+FROM board
+where title like '%2%';
   
 select  bo.no as no
         ,bo.title
